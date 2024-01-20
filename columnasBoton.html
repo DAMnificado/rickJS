@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Personajes de Rick y Morty</title>
+    <!-- Agregamos la referencia a Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Agregamos margen a las imágenes */
+        .personaje-imagen {
+            margin-bottom: 10px; /* Puedes ajustar el valor según tus preferencias */
+            max-width: 100%; /* Ajusta el ancho máximo de la imagen */
+            height: auto; /* Ajusta la altura automáticamente según el ancho */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="text-center mt-3">LISTA DE PERSONAJES DE RICK Y MORTY</h1>
+
+    <div id="contenedor" class="container"></div>
+
+    <!-- Botón para cargar los 10 siguientes personajes -->
+    <div class="text-center mt-3">
+        <button id="cargarMasBtn" class="btn btn-primary">Cargar mas personajes</button>
+    </div>
+
+    <script>
+        class Personaje {
+            constructor(nombre, imagen) {
+                this.nombre = nombre;
+                this.imagen = imagen;
+            }
+        }
+
+        const url = "https://rickandmortyapi.com/api/character/";
+        let nextPageUrl = "";
+        let listaPersonajes = [];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            cargarPersonajes(url);
+
+            document.getElementById("cargarMasBtn").addEventListener("click", () => {
+                cargarPersonajes(nextPageUrl);
+            });
+        });
+
+        function cargarPersonajes(url) {
+            fetchDataFromUrl(url)
+                .then((listaJson) => {
+                    let nuevosPersonajes = listaJson.results.map((personaje) => {
+                        let nuevoPersonaje = new Personaje();
+                        nuevoPersonaje.nombre = personaje.name;
+                        nuevoPersonaje.imagen = personaje.image;
+                        return nuevoPersonaje;
+                    });
+
+                    listaPersonajes = nuevosPersonajes;
+
+                    // Limpiamos el contenedor de filas
+                    document.getElementById("contenedor").innerHTML = "";
+
+                    // Creamos nuevas filas y llenamos con la lista actualizada
+                    for (let i = 0; i < 3; i++) {
+                        let nuevaFila = document.createElement("div");
+                        nuevaFila.className = "row";
+
+                        for (let j = 0; j < 6; j++) {
+                            let index = i * 6 + j;
+                            if (index < listaPersonajes.length) {
+                                let columna = document.createElement("div");
+                                columna.className = "col-lg-2 col-md-3 col-sm-4";
+
+                                let nombrePersonaje = document.createElement("p");
+                                nombrePersonaje.innerText = listaPersonajes[index].nombre;
+
+                                let imagenPersonaje = document.createElement("img");
+                                imagenPersonaje.src = listaPersonajes[index].imagen;
+                                imagenPersonaje.className = "personaje-imagen img-fluid";
+
+                                columna.appendChild(imagenPersonaje);
+                                columna.appendChild(nombrePersonaje);
+
+                                nuevaFila.appendChild(columna);
+                            }
+                        }
+
+                        document.getElementById("contenedor").appendChild(nuevaFila);
+                    }
+
+                    // Actualizamos el valor de nextPageUrl
+                    nextPageUrl = listaJson.info.next;
+                });
+        }
+
+        function fetchDataFromUrl(url) {
+            return fetch(url)
+                .then((response) => response.json());
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

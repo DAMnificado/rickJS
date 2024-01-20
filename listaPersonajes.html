@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Personajes de Rick y Morty</title>
+</head>
+
+<body>
+
+    <h1>LISTA DE PERSONAJES DE RICK Y MORTY</h1>
+
+    <div id="contenedor">
+    </div>
+
+    <script>
+
+        class Personaje {
+
+            constructor(nombre, imagen) {
+                this.nombre = nombre;
+                this.imagen = imagen;
+            }
+
+        }
+
+        const url = "https://rickandmortyapi.com/api/character/";
+
+        let listaPersonajes = [];
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            fetchDataFromUrl(url)
+
+                .then((listaJson) => {
+                    let personajePromises = listaJson.results.slice(0, 10).map((personaje) => {
+
+                        let nuevoPersonaje = new Personaje();
+                        nuevoPersonaje.nombre = personaje.name;
+                        nuevoPersonaje.imagen = personaje.image;
+
+                        return nuevoPersonaje;
+                    });
+
+                    return Promise.all(personajePromises);
+                })
+                .then((personajes) => {
+                    listaPersonajes = personajes;
+
+                    let contenedor = document.getElementById("contenedor");
+
+                    listaPersonajes.forEach((personaje) => {
+
+                        let nombrePersonaje = document.createElement("p");
+                        nombrePersonaje.innerText = personaje.nombre;
+
+                        let imagenPersonaje = document.createElement("img");
+                        imagenPersonaje.src = personaje.imagen;
+
+                        contenedor.appendChild(nombrePersonaje);
+                        contenedor.appendChild(imagenPersonaje);
+                    });
+
+                });
+        });
+
+        function fetchDataFromUrl(url) {
+            return fetch(url)
+                .then((response) => response.json());
+        }
+
+    </script>
+
+</body>
+</html>
