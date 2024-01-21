@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gif Page</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .background-image {
+            background-image: url('img/corte.gif');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .button-container {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translate(0, -50%);
+            text-align: right;
+        }
+
+        .center-button, .top-button {
+            background-color: #8e44ad;
+            color: #fff;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px; /* Ajusta el espacio entre los botones según tus preferencias */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="background-image">
+        <div class="background-overlay"></div>
+        <div class="button-container">
+            <button class="center-button" onclick="window.location.href='index.html'">Regresar a Home</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gif Page</title>
+    <style>
+        body {
+            margin: 0; /* Asegura que no haya márgenes para ocupar toda la pantalla */
+            overflow: hidden; /* Evita barras de desplazamiento */
+        }
+
+        .background-image {
+            background-image: url('img/ojos.gif'); /* Ajusta la ruta según tu estructura de carpetas */
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden; /* Esto asegura que el GIF no se desborde fuera del contenedor */
+        }
+
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según sea necesario */
+        }
+
+        .center-button {
+            position: absolute;
+            top: 50%;
+            right: 10%; /* Ajusta la distancia desde la derecha según tus preferencias */
+            transform: translate(-50%, -50%);
+            background-color: white; /* Cambia el color de fondo a lila */
+            color: #fff; /* Cambia el color del texto según tus preferencias */
+            padding: 15px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+	<!-- Mostrar el gif aquí -->
+	<div class="background-image">
+		<div class="background-overlay"></div>
+        <button class="center-button" onclick="window.location.href='index.html'">Regresar a Home</button>
+	</div>
+    
+</body>
+</html>

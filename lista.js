@@ -1,40 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Personajes de Rick y Morty</title>
-    <!-- Agregamos la referencia a Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Agregamos margen a las imágenes */
-        .personaje-imagen {
-            margin-bottom: 10px; /* Puedes ajustar el valor según tus preferencias */
-            max-width: 100%; /* Ajusta el ancho máximo de la imagen */
-            height: auto; /* Ajusta la altura automáticamente según el ancho */
-        }
-    </style>
-</head>
-
-<body>
-
-    <h1 class="text-center mt-3">LISTA DE PERSONAJES DE RICK Y MORTY</h1>
-
-    <div id="contenedor" class="container"></div>
-
-    <!-- Botón para cargar los 10 siguientes personajes -->
-    <div class="text-center mt-3">
-        <button id="cargarMasBtn" class="btn btn-primary">Cargar mas personajes</button>
-    </div>
-
-    <script>
-        class Personaje {
-            constructor(nombre, imagen) {
-                this.nombre = nombre;
-                this.imagen = imagen;
-            }
-        }
 
         const url = "https://rickandmortyapi.com/api/character/";
         let nextPageUrl = "";
@@ -52,9 +16,11 @@
             fetchDataFromUrl(url)
                 .then((listaJson) => {
                     let nuevosPersonajes = listaJson.results.map((personaje) => {
-                        let nuevoPersonaje = new Personaje();
-                        nuevoPersonaje.nombre = personaje.name;
-                        nuevoPersonaje.imagen = personaje.image;
+                        let nuevoPersonaje = new Personaje(
+                            personaje.name,
+                            personaje.image,
+                            personaje.species
+                        );
                         return nuevoPersonaje;
                     });
 
@@ -81,6 +47,12 @@
                                 imagenPersonaje.src = listaPersonajes[index].imagen;
                                 imagenPersonaje.className = "personaje-imagen img-fluid";
 
+                                // Agregamos un evento de clic a la imagen
+                                
+                                imagenPersonaje.addEventListener("click", () => {
+                                    mostrarDetalles(listaPersonajes[index]);
+                                });
+
                                 columna.appendChild(imagenPersonaje);
                                 columna.appendChild(nombrePersonaje);
 
@@ -96,13 +68,13 @@
                 });
         }
 
+        function mostrarDetalles(personaje) {
+            // Redirigir a la página de detalles con más información
+            window.location.href = `datos.html?nombre=${encodeURIComponent(personaje.nombre)}&species=${encodeURIComponent(personaje.species)}`;
+        }
+
         function fetchDataFromUrl(url) {
             return fetch(url)
                 .then((response) => response.json());
         }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
+  
