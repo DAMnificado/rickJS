@@ -48,13 +48,13 @@
                                 imagenPersonaje.className = "personaje-imagen img-fluid";
 
                                 // Agregamos un evento de clic a la imagen
-                                
+
                                 imagenPersonaje.addEventListener("click", () => {
                                     mostrarDetalles(listaPersonajes[index]);
                                 });
 
                                 columna.appendChild(imagenPersonaje);
-                                columna.appendChild(nombrePersonaje);
+                                //columna.appendChild(nombrePersonaje);
 
                                 nuevaFila.appendChild(columna);
                             }
