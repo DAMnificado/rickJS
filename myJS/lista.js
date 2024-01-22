@@ -28,37 +28,46 @@ function cargarPersonajes(url) {
             document.getElementById("contenedor").innerHTML = "";
 
             // Creamos nuevas filas y llenamos con la lista actualizada
-            for (let i = 0; i < 3; i++) {
+           
                 let nuevaFila = document.createElement("div");
-                nuevaFila.className = "row";
+                nuevaFila.className = "row row-cols-lg-5 row-cols-md-3 row-cols-1 container align-items-center justify-content-center";
 
-                for (let j = 0; j < 6; j++) {
-                    let index = i * 6 + j;
-                    if (index < listaPersonajes.length) {
-                        let columna = document.createElement("div");
-                        columna.className = "col-lg-2 col-md-3 col-sm-4";
+              
+                listaPersonajes.forEach(value => {
 
-                        let nombrePersonaje = document.createElement("p");
-                        nombrePersonaje.innerText = listaPersonajes[index].nombre;
 
-                        let imagenPersonaje = document.createElement("img");
-                        imagenPersonaje.src = listaPersonajes[index].imagen;
-                        imagenPersonaje.className = "personaje-imagen img-fluid";
+                let columna = document.createElement("div");
+                 columna.className = " col";
 
-                        // Agregamos un evento de clic a la imagen
-                        imagenPersonaje.addEventListener("click", () => {
-                            mostrarDetalles(listaPersonajes[index]);
-                        });
+                let nombrePersonaje = document.createElement("p");
+                                        nombrePersonaje.innerText = value.nombre;
 
-                        columna.appendChild(imagenPersonaje);
-                        //columna.appendChild(nombrePersonaje);
+                let imagenPersonaje = document.createElement("img");
+                                        imagenPersonaje.src = value.imagen;
+                                        imagenPersonaje.className = "personaje-imagen img-fluid";
 
-                        nuevaFila.appendChild(columna);
-                    }
-                }
+                                        // Agregamos un evento de clic a la imagen
+                                        imagenPersonaje.addEventListener("click", () => {
+                                            mostrarDetalles(value);
+                                        });
+
+                                        columna.appendChild(imagenPersonaje);
+                                        //columna.appendChild(nombrePersonaje);
+
+                                        nuevaFila.appendChild(columna);
+                                    
+
+
+
+
+
+
+                })
+                       
+                
 
                 document.getElementById("contenedor").appendChild(nuevaFila);
-            }
+            
 
             // Actualizamos el valor de nextPageUrl
             nextPageUrl = listaJson.info.next;
