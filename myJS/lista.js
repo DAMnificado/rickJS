@@ -44,7 +44,7 @@ function cargarPersonajes(url) {
 
                 let imagenPersonaje = document.createElement("img");
                                         imagenPersonaje.src = value.imagen;
-                                        imagenPersonaje.className = "personaje-imagen img-fluid";
+                                        imagenPersonaje.className = "personaje-imagen img-fluid mt-3";
 
                                         // Agregamos un evento de clic a la imagen
                                         imagenPersonaje.addEventListener("click", () => {
@@ -56,12 +56,6 @@ function cargarPersonajes(url) {
 
                                         nuevaFila.appendChild(columna);
                                     
-
-
-
-
-
-
                 })
                        
                 
