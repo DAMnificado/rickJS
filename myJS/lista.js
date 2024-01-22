@@ -1,3 +1,5 @@
+import { Personaje } from './personaje.js';
+
 const url = "https://rickandmortyapi.com/api/character/";
 let nextPageUrl = "";
 let listaPersonajes = [];
@@ -45,8 +47,7 @@ function cargarPersonajes(url) {
                 let imagenPersonaje = document.createElement("img");
                                         imagenPersonaje.src = value.imagen;
                                         imagenPersonaje.className = "personaje-imagen img-fluid mt-3";
-
-                                        // Agregamos un evento de clic a la imagen
+                                        
                                         imagenPersonaje.addEventListener("click", () => {
                                             mostrarDetalles(value);
                                         });
@@ -65,12 +66,12 @@ function cargarPersonajes(url) {
 
             // Actualizamos el valor de nextPageUrl
             nextPageUrl = listaJson.info.next;
-        });
+        })
 }
 
 function mostrarDetalles(personaje) {
     // Redirigir a la página de detalles con más información
-    window.location.href = `datos.html?nombre=${(personaje.nombre)}&species=${(personaje.species)}`;
+    window.location.href = `datos.html?nombre=${(personaje.nombre)}&species=${(personaje.species)}&imagen=${(personaje.imagen)}`;
 }
 
 function fetchDataFromUrl(url) {

@@ -14,7 +14,21 @@
 
 
     <style>
-        
+
+        .detallista{
+            margin-left: 70%;
+
+        }
+
+        .detalle{
+            background-image: url('./img/datosfoto.png'); /* Reemplaza con la ruta correcta de tu imagen */
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat; 
+            height: 300px; 
+          
+        }
+
         h3, h2, #nombre, #species {
             color: white;
 			font-family: 'Orbitron', sans-serif; /* Aplica la fuente Orbitron */
@@ -24,7 +38,8 @@
 <body>
    
 
-    <section class="page-top-section set-bg" data-setbg="img/datosfoto.png">
+    <section class="detalle page-top-section set-bg" data-setbg="img/">
+
         <div class="page-info">
             <h3>Datos</h3>
             <div class="site-breadcrumb">
@@ -37,29 +52,17 @@
     
     <section class="games-single-page">
         <div class="container">
-            <div class="row">
+            <div class="detallista row">
                 <h2>Detalles</h2>
                 <div class="col-md-6 offset-md-3">
                     <p id="nombre"></p>
                     <p id="species"></p>
+                    
+                    <img id="imagen" alt="">
                 </div>
             </div>
         </div>
     </section>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Obtener los parámetros de la URL
-            const urlParams = new URLSearchParams(window.location.search);
-
-            const nombre = urlParams.get("nombre");
-            const species = urlParams.get("species");
-
-            // Mostrar los detalles del personaje
-            document.getElementById("nombre").innerText = `Nombre: ${nombre}`;
-            document.getElementById("species").innerText = `Especie: ${species}`;
-        });
-    </script>
 
     <!-- Escrito por section -->
     <section class="game-author-section">
@@ -99,5 +102,6 @@
     <script src="js/jquery.sticky-sidebar.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="module" src="/myJS/datos.js"></script>
 </body>
 </html>
