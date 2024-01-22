@@ -30,7 +30,7 @@ function cargarPersonajes(url) {
             // Creamos nuevas filas y llenamos con la lista actualizada
            
                 let nuevaFila = document.createElement("div");
-                nuevaFila.className = "row row-cols-lg-5 row-cols-md-3 row-cols-1 container align-items-center justify-content-center";
+                nuevaFila.className = "row row-cols-lg-5 row-cols-md-3 row-cols-1 container align-items-center justify-content-center personajes";
 
               
                 listaPersonajes.forEach(value => {

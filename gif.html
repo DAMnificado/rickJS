@@ -6,21 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gif Page</title>
     <!-- Agregamos la referencia a Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css"/>
     <style>
-        body {
-            margin: 0;
-            background-color: black; /* Fondo negro */
-            color: white; /* Texto blanco */
-        }
-
-        .container {
-            position: relative;
-            width: 100%;
-            height: auto;
-            overflow: hidden;
-        }
-
+      
+        .letra {
+            color: purple; /* Color lila */
+            font-family: "Press Start 2P";
+            font-size: 24px; /* Tamaño del texto */
+            font-weight: bold; /* Negrita */
+            text-transform: uppercase; /* Convertir texto a mayúsculas */
+            letter-spacing: 1px; /* Espaciado entre caracteres */
+            /* Otros estilos según sea necesario */
+          }
+    
+          .nav-link {
+            color: purple !important; /* Texto blanco */
+          }
+          .margen{
+            margin-top: 8%;
+          }
         .center-button {
             position: absolute;
             top: 80%; /* Ajustamos la posición */
@@ -43,50 +49,58 @@
             max-height: 100%;
         }
 
-        /* Estilos del navbar */
-        .navbar-custom {
-            background-color: #8a2be2; /* Color lila */
-            padding: 10px 0; /* Ajustamos el padding */
-        }
-
-        .navbar-brand, .nav-link {
-            color: #ffffff !important; /* Texto blanco */
-        }
-
-        .navbar-toggler-icon {
-            background-color: #ffffff; /* Ícono del botón blanco */
-        }
+      
     </style>
 </head>
 
 <body>
 
-    <!-- Copiamos el código del navbar aquí -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-        <div class="container">
-            <a class="navbar-brand" href="#">Rick y Morty</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <header class="header-section">
+        <div class="header-warp">
+            <div class="header-bar-warp ">
+        <nav class="navbar navbar-expand-md" id="headerNav">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="lista.html">Personajes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gif.html">Epilepsy-warning</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://rickandmortyapi.com/">About</a></li>
-                </ul>
+      
+            <!-- Menú -->
+      
+            <div class="collapse navbar-collapse align-items-center justify-content-center" id="navbarNavDropdown">
+              <ul class="navbar-nav letra">
+                <li class="nav-item ">
+                  <a class="nav-link" href="lista.html">Personajes</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="gif.html">Epilepsy-warning</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="contact.html">Contacto</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="https://rickandmortyapi.com/">About</a>
+                </li>
+              </ul>
             </div>
+      
+      
+          </nav>
         </div>
-    </nav>
-    <!-- Fin del código del navbar -->
+        </div>
+    </header>
 
-    <div class="container">
+    <div class="margen container">
         <img src="img/ojos.gif" alt="GIF Descripción">
         <button class="center-button" onclick="window.location.href='index.html'">Regresar a Home</button>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
 </body>
 

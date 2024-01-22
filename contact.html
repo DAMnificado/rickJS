@@ -1,76 +1,115 @@
 <!DOCTYPE html>
-<html lang="zxx">
-<head>
-	<title>EndGam - Gaming Magazine Template</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="EndGam Gaming Magazine Template">
-	<meta name="keywords" content="endGam, gaming, magazine, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="img/favicon.ico" rel="shortcut icon"/>
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> <!-- Agregada la fuente Montserrat -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/slicknav.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
-	<link rel="stylesheet" href="css/magnific-popup.css"/>
-	<link rel="stylesheet" href="css/animate.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
-	
-	<style>
-        .page-top-section {
-            width: 100%;
-            height: 100vh;
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-		.center-button {
-            position: absolute;
-            top: 90%;
-            left: 8%;
-            transform: translate(-50%, -50%);
-            background-color: #800080; /* Color lila */
-            color: white; /* Texto en blanco */
-            padding: 15px 25px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Personajes de Rick y Morty</title>
+    <!-- Agregamos la referencia a Bootstrap -->
 
-        /* Estilos para el texto del footer */
-        .footer-section h4 {
-            color: #FFD700; /* Color dorado para los títulos del footer */
-            font-family: 'Montserrat', sans-serif; /* Cambiar a la fuente Montserrat */
-        }
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"rel="stylesheet"
+    />
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css"/>
 
-        .footer-section p {
-            color: white; /* Texto en blanco */
-        }
+    <style>
+
+      /* Agregamos la imagen de fondo */
+  
+		body { background-color: black;}
+		
+      .lila{
+        background-color: #8a2be2;
+        color: rgb(224, 208, 208);
+        border: none;
+        border-radius: 5px;
+        padding: 15px 25px;
+        cursor: pointer;
+      }
+
+      .letra {
+        color: purple; /* Color lila */
+        font-family: "Press Start 2P";
+        font-size: 24px; /* Tamaño del texto */
+        font-weight: bold; /* Negrita */
+        text-transform: uppercase; /* Convertir texto a mayúsculas */
+        letter-spacing: 1px; /* Espaciado entre caracteres */
+        /* Otros estilos según sea necesario */
+      }
+
+      .nav-link {
+        color: purple !important; /* Texto blanco */
+      }
+
+	  .margen{
+ 	  margin-top: 10%;
+	  }
+
     </style>
-</head>
-<body>
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
+  </head>
 
-	<section class="page-top-section set-bg" data-setbg="img/banner.png">
-	</section>
+  <body>
+    
+    <header class="header-section">
+        <div class="header-warp">
+            <div class="header-bar-warp ">
+        <nav class="navbar navbar-expand-md" id="headerNav">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+      
+      
+      
+            <!-- Menú -->
+      
+            <div class="collapse navbar-collapse align-items-center justify-content-center" id="navbarNavDropdown">
+              <ul class="navbar-nav letra">
+                <li class="nav-item ">
+                  <a class="nav-link" href="lista.html">Personajes</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="gif.html">Epilepsy-warning</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="contact.html">Contacto</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="https://rickandmortyapi.com/">About</a>
+                </li>
+              </ul>
+            </div>
+      
+      
+          </nav>
+        </div>
+        </div>
+    </header>
+    <div id="contenedor" class="container">
+    </div>
+
+	<img class="margen imagen" src="img/banner.png" alt="">
 
 	<section class="contact-page">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-7 order-2 order-lg-1">
-                    <!-- Contenido existente -->
-                </div>
-                
-                <div class="col-lg-5 order-1 order-lg-2 contact-text text-white">
-                    <!-- Contenido existente -->
-                </div>
-            </div>
+           
             <div class="map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14253.644217631116!2d-8.7207!3d42.2406!2m3!1f0!2f0!3f0!3m2!1sen!2ses!4v1642751444973!5e0!3m2!1sen!2ses" style="border:0;" allowfullscreen=""></iframe>
             </div>
-            <button class="center-button" onclick="window.location.href='index.html'">Regresar a Home</button>
+            <button class="lila center-button" onclick="window.location.href='index.html'">Regresar a Home</button>
         </div>
     </section>
 
@@ -95,12 +134,10 @@
 		</div>
 	</footer>
 
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.slicknav.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.sticky-sidebar.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/main.js"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
