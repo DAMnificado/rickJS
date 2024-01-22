@@ -1,58 +1,77 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-	<title>EndGam - Gaming Magazine Template</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="EndGam Gaming Magazine Template">
-	<meta name="keywords" content="endGam, gaming, magazine, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+    <title>EndGam - Gaming Magazine Template</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="EndGam Gaming Magazine Template">
+    <meta name="keywords" content="endGam, gaming, magazine, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="img/favicon.ico" rel="shortcut icon"/>
 
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/slicknav.min.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
-	<style>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/slicknav.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('img/tu_foto.jpg');
+            background-size: cover;
+            background-position: center;
+        }
 
-		.background-image {
-			background-image: url('img/tu_foto.jpg');
-			height: 100vh;
-			background-size: cover;
-			background-position: center;
-			position: relative;
-		}
+        .logo img {
+            width: 200px; /* Ajusta el ancho según sea necesario */
+            height: auto; /* Mantiene la proporción original */
+        }
 
-		.site-logo img {
-			max-width: 150px; /* Ajusta el tamaño según tus necesidades */
-			height: auto;
-		}
+        .logo {
+            text-align: center;
+            margin-top: 50px; /* Ajusta este valor para bajar o subir el logo */
+        }
 
-	</style>
+        /* Estilos para los elementos del menú */
+        .main-menu.primary-menu li a {
+            color: purple; /* Color lila */
+            font-family: 'Press Start 2P'; /* Estilo de letra Roboto */
+            font-size: 24px; /* Tamaño del texto */
+            font-weight: bold; /* Negrita */
+            text-transform: uppercase; /* Convertir texto a mayúsculas */
+            letter-spacing: 1px; /* Espaciado entre caracteres */
+            /* Otros estilos según sea necesario */
+        }
+    </style>
 </head>
 <body>
-	<!-- Header section -->
-	<header class="header-section">
-		<div class="header-warp">
-			<div class="header-bar-warp d-flex">
-				<nav class="top-nav-area w-100">
-					<!-- Menú -->
-					<ul class="main-menu primary-menu">
-						<li><a href="lista.html">Personajes</a>
-								<li><a href="gif.html">Epilepsy warning</a></li>
-						</li>
-						<li><a href="contact.html">Quienes somos</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
+    <!-- Header section -->
+    <header class="header-section">
+        <div class="header-warp">
+            <div class="header-bar-warp d-flex">
+                <nav class="top-nav-area w-100">
+                    <!-- Menú -->
+                    <ul class="main-menu primary-menu">
+                        <li><a href="lista.html">Personajes</a></li>
+                        <li><a href="gif.html">Epilepsy-warning</a></li>
+                        <li><a href="contact.html">Contacto</a></li>
+						<li><a href="https://rickandmortyapi.com/">About</a></li>
 
-	<div class="background-image">
-	</div>
-	
+						
+                    </ul>
+                </nav>
+            </div>
+            <div class="logo">
+                <img src="img/logo.png" alt="Tu Logo">
+            </div>
+        </div>
+    </header>
 </body>
 </html>

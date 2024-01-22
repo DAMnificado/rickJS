@@ -10,10 +10,10 @@
     <style>
         /* Agregamos margen a las imágenes */
         .personaje-imagen {
-            margin-bottom: 10px; /* Puedes ajustar el valor según tus preferencias */
-            max-width: 100%; /* Ajusta el ancho máximo de la imagen */
-            height: auto; /* Ajusta la altura automáticamente según el ancho */
-            cursor: pointer; /* Cambiamos el cursor al hacer hover sobre la imagen */
+            margin-bottom: 10px;
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
         }
 
         .center-button {
@@ -28,16 +28,66 @@
             cursor: pointer;
         }
 
+        /* Agregamos la imagen de fondo */
+        body {
+            background: url('img/espacio.jpg') center center fixed;
+            background-size: cover;
+        }
+
+        .lila-button {
+            background-color: #8a2be2;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 25px;
+            cursor: pointer;
+        }
+
+        /* Modificamos el estilo del navbar */
+        .navbar-custom {
+            background-color: #8a2be2; /* Color lila */
+            text-align: center;
+        }
+
+        .navbar-brand {
+            color: #ffffff; /* Texto blanco */
+        }
+
+        .navbar-nav {
+            text-align: center;
+        }
+
+        .nav-link {
+            color: #ffffff !important; /* Texto blanco */
+        }
     </style>
 </head>
 
 <body>
-    <br>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">Rick y Morty</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="lista.html">Personajes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gif.html">Epilepsy-warning</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://rickandmortyapi.com/">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div id="contenedor" class="container"></div>
-    
+
     <div class="text-center mt-3">
-        <button class="center-button" onclick="window.location.href='index.html'">Regresar a Home</button>
-        <button id="cargarMasBtn" class="btn btn-primary">Cargar mas personajes</button>
+        <button class="center-button lila-button" onclick="window.location.href='index.html'">Regresar a Home</button>
+        <button id="cargarMasBtn" class="btn btn-primary lila-button">Cargar más personajes</button>
     </div>
 
     <script src="personaje.js"></script>

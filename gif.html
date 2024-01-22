@@ -1,54 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gif Page</title>
+    <!-- Agregamos la referencia a Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            margin: 0; /* Asegura que no haya márgenes para ocupar toda la pantalla */
-            overflow: hidden; /* Evita barras de desplazamiento */
+            margin: 0;
+            background-color: black; /* Fondo negro */
+            color: white; /* Texto blanco */
         }
 
-        .background-image {
-            background-image: url('img/ojos.gif'); /* Ajusta la ruta según tu estructura de carpetas */
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
+        .container {
             position: relative;
-            overflow: hidden; /* Esto asegura que el GIF no se desborde fuera del contenedor */
-        }
-
-        .background-overlay {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad según sea necesario */
+            width: 100%;
+            height: auto;
+            overflow: hidden;
         }
 
         .center-button {
             position: absolute;
-            top: 50%;
-            right: 10%; /* Ajusta la distancia desde la derecha según tus preferencias */
-            transform: translate(-50%, -50%);
-            background-color: white; /* Cambia el color de fondo a lila */
-            color: #fff; /* Cambia el color del texto según tus preferencias */
+            top: 80%; /* Ajustamos la posición */
+            right: 52%;
+            transform: translate(50%, -50%);
+            background-color: #4B0082; /* Color lila */
+            color: #fff;
             padding: 15px 25px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
         }
-        
+
+        img {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        /* Estilos del navbar */
+        .navbar-custom {
+            background-color: #8a2be2; /* Color lila */
+            padding: 10px 0; /* Ajustamos el padding */
+        }
+
+        .navbar-brand, .nav-link {
+            color: #ffffff !important; /* Texto blanco */
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ffffff; /* Ícono del botón blanco */
+        }
     </style>
 </head>
+
 <body>
-	<!-- Mostrar el gif aquí -->
-	<div class="background-image">
-		<div class="background-overlay"></div>
+
+    <!-- Copiamos el código del navbar aquí -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#">Rick y Morty</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="lista.html">Personajes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gif.html">Epilepsy-warning</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://rickandmortyapi.com/">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Fin del código del navbar -->
+
+    <div class="container">
+        <img src="img/ojos.gif" alt="GIF Descripción">
         <button class="center-button" onclick="window.location.href='index.html'">Regresar a Home</button>
-	</div>
-    
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>

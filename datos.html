@@ -1,112 +1,105 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-	
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/slicknav.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.min.css"/>
-	<link rel="stylesheet" href="css/magnific-popup.css"/>
-	<link rel="stylesheet" href="css/animate.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/slicknav.min.css"/>
+    <link rel="stylesheet" href="css/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="css/magnific-popup.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron&display=swap">
 
 
+
+    <style>
+        
+        h3, h2, #nombre, #species {
+            color: white;
+			font-family: 'Orbitron', sans-serif; /* Aplica la fuente Orbitron */
+        }
+    </style>
 </head>
 <body>
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
 
-	<section class="page-top-section set-bg" data-setbg="img/datosfoto.png">
-		<div class="page-info">
-			<h3>Datos</h3>
-			<div class="site-breadcrumb">
-				<a href="index.html">Home</a>  /
-				<a href="lista.html">Lista</a>
-			</div>
-		</div>
-	</section>
-	
+    <section class="page-top-section set-bg" data-setbg="img/datosfoto.png">
+        <div class="page-info">
+            <h3>Datos</h3>
+            <div class="site-breadcrumb">
+                <a href="index.html">Home</a> /
+                <a href="lista.html">Lista</a>
+            </div>
+        </div>
+    </section>
 
-	<!-- Datos section -->
+    <!-- Datos section -->
+    <section class="games-single-page">
+        <div class="container">
+            <div class="row">
+                <h2>Detalles</h2>
+                <div class="col-md-6 offset-md-3">
+                    <p id="nombre"></p>
+                    <p id="species"></p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<section class="games-single-page">
-		
-		<div class="container">
-			<div class="row">
-				<h2>Detalles</h2>
-				<div class="col-md-6 offset-md-3">
-					<p id="nombre"></p>
-					<p id="species"></p>
-	
-				</div>
-			</div>
-		</div>
-	</section>
-	
-	<script>
-		document.addEventListener("DOMContentLoaded", () => {
-			// Obtener los parámetros de la URL
-			const urlParams = new URLSearchParams(window.location.search);
-	
-			const nombre = urlParams.get("nombre");
-			const species = urlParams.get("species");
-			
-	
-			// Mostrar los detalles del personaje
-			document.getElementById("nombre").innerText = `Nombre: ${nombre}`;
-			document.getElementById("species").innerText = `Especie: ${species}`;
-		
-		});
-	</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Obtener los parámetros de la URL
+            const urlParams = new URLSearchParams(window.location.search);
 
+            const nombre = urlParams.get("nombre");
+            const species = urlParams.get("species");
 
-	<!-- Escrito por section -->
+            // Mostrar los detalles del personaje
+            document.getElementById("nombre").innerText = `Nombre: ${nombre}`;
+            document.getElementById("species").innerText = `Especie: ${species}`;
+        });
+    </script>
 
-	<section class="game-author-section">
-		<div class="container">
-			<div class="game-author-pic set-bg" data-setbg="img/creadores.png"></div>
-			<div class="game-author-info">
-				<h4>Justin Roiland y Dan Harmon</h4>
-				<p>
-				Estos señores crearon un universo y quería poner información interesante sobre ellos aquí, pero tras unas acusaciones por violencia doméstica a uno de ellos internet está lleno de noticias como <a href="https://www.lavanguardia.com/series/20230125/8707362/justin-roiland-rick-y-morty-acusado-malos-tratos.html" target="_blank"> esta</a>
-				</p>
-				</div>
-		</div>
-	</section>
+    <!-- Escrito por section -->
+    <section class="game-author-section">
+        <div class="container">
+            <div class="game-author-pic set-bg" data-setbg="img/creadores.png"></div>
+            <div class="game-author-info">
+                <h4>Justin Roiland y Dan Harmon</h4>
+                <p>
+                Estos señores crearon un universo y quería poner información interesante sobre ellos aquí, pero tras unas acusaciones por violencia doméstica a uno de ellos internet está lleno de noticias como <a href="https://www.lavanguardia.com/series/20230125/8707362/justin-roiland-rick-y-morty-acusado-malos-tratos.html" target="_blank"> esta</a>
+                </p>
+            </div>
+        </div>
+    </section>
 
-	<!-- Newsletter section -->
-	<section class="newsletter-section">
-		<div class="container">
-			<h2>Suscríbete y entra en el sorteo de un iPhone 15</h2>
-			<form class="newsletter-form" id="newsletterForm">
-				<input type="text" placeholder="INGRESA TU CORREO ELECTRÓNICO">
-			</form>
-			<br>
-			<button class="site-btn" id="subscribeBtn">Suscríbete  <img src="img/icons/double-arrow.png" alt=""/></button>
-		</div>
+    <!-- Newsletter section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h3>Suscríbete y entra en el sorteo de un iPhone 15</h3>
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="text" placeholder="INGRESA TU CORREO ELECTRÓNICO">
+            </form>
+            <br>
+            <button class="site-btn" id="subscribeBtn">Suscríbete  <img src="img/icons/double-arrow.png" alt=""/></button>
+        </div>
+    </section>
 
-	</section>
-	
-	<script>
-		document.getElementById('subscribeBtn').addEventListener('click', function() {
-			window.location.href = 'corte.html';
-		});
-	</script>
+    <script>
+        document.getElementById('subscribeBtn').addEventListener('click', function() {
+            window.location.href = 'corte.html';
+        });
+    </script>
 
-	
-	
-	
-	
-
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.slicknav.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.sticky-sidebar.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/main.js"></script>
-
-	</body>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.sticky-sidebar.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
 </html>
